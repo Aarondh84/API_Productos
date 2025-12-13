@@ -13,13 +13,10 @@ export class App {
   protected readonly title = signal('api_producto');
 
   constructor(private productService: ProductService) {
-    this.productService.cargarProductos().subscribe(
-      (datos :Product[]) => {
-        console.log('Productos cargados de la API: ',datos)
-      })
+    this.productService.cargarProductos();
   }
 
   onProductoCreado(producto: any) {
-    console.log('Producto recibido:', producto);
+    this.productService.agregarProducto(producto);
   }
 }

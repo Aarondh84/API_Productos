@@ -4,11 +4,13 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-products-card',
+  standalone: true,
   imports: [CommonModule, CurrencyPipe],
   templateUrl: './products-card.html',
   styleUrl: './products-card.css',
 })
 export class ProductsCard {
+
   @Input() producto!: Product;
 
   @Output() eliminar = new EventEmitter<string>();

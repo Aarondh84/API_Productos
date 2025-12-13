@@ -13,15 +13,19 @@ export class ProductsList {
   productos: Product[] = [];
 
   constructor(private productService: ProductService) {
-    this.productService.cargarProductos().subscribe
-      (datos => {
-        this.productos = datos;
-        console.log('Productos cargados de la API: ',datos)
-      })
+  //this.productService.cargarProductos().subscribe(datos => {
+  //  console.log('Productos cargados:', datos);
+  //});
+  }
+
+  ngOnInit(): void {
+    this.productService.productos$.subscribe(productos => {
+      this.productos = productos;
+      console.log('Productos recibidos:', productos);
+    });
   }
 
   onEliminar(id: string) {
-  console.log('Producto a eliminar:', id);
-  // Aquí luego llamaremos al servicio
+  this.productService.eliminarProducto(id);
 }
 }
