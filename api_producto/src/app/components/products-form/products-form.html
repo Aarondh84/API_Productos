@@ -1,0 +1,58 @@
+<div class="card shadow border-0">
+  <div class="card-header bg-dark text-white text-center">
+    <h4 class="mb-0 fw-semibold">➕ Añadir producto</h4>
+  </div>
+
+  <div class="card-body p-4">
+
+    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+      <div class="row g-3">
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Nombre</label>
+          <input class="form-control" formControlName="name" placeholder="Nombre del producto">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Categoría</label>
+          <input class="form-control" formControlName="category" placeholder="Ej: Hombre">
+        </div>
+
+        <div class="col-12">
+          <label class="form-label fw-semibold">Descripción</label>
+          <textarea class="form-control" rows="3"
+            formControlName="description"
+            placeholder="Descripción breve del producto">
+          </textarea>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Precio (€)</label>
+          <input type="number" class="form-control" formControlName="price">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">URL imagen</label>
+          <input class="form-control" formControlName="image" placeholder="https://">
+        </div>
+
+        <div class="col-12 d-flex justify-content-between align-items-center mt-2">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" formControlName="active" id="activoCheck">
+            <label class="form-check-label fw-semibold" for="activoCheck">
+              Producto activo
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-success px-4">
+            Crear producto
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>
