@@ -60,5 +60,27 @@ export class ProductService {
     this.productosSubject.next(this.productosOriginales);
   }
 
+  filtrarPorNombre(nombre: string) {
+  const filtrados = this.productosOriginales.filter(p =>
+    p.name.toLowerCase().includes(nombre.toLowerCase())
+  );
+  this.productosSubject.next(filtrados);
+}
+
+filtrarPorCategoria(categoria: string) {
+  const filtrados = this.productosOriginales.filter(p =>
+    p.category.toLowerCase().includes(categoria.toLowerCase())
+  );
+  this.productosSubject.next(filtrados);
+}
+
+filtrarPorActivo(soloActivos: boolean) {
+  const filtrados = soloActivos
+    ? this.productosOriginales.filter(p => p.active)
+    : this.productosOriginales;
+
+  this.productosSubject.next(filtrados);
+}
+
 }
 

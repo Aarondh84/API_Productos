@@ -30,15 +30,18 @@
   </header>
 
   <main class="container mb-5 pt-4 text-dark">
+    <div>
+      <app-product-filter></app-product-filter>
+    </div>
+    
+    <div class="bg-black bg-opacity-10 border border-secondary rounded-3 p-4">
+      <app-products-list></app-products-list>
+    </div>
 
-    <div class="bg-secondary-subtle bg-opacity-10 border border-secondary rounded-3 p-4 mb-4">
+    <div class=" mb-4 py-3">
       <app-products-form
         (productoCreado)="onProductoCreado($event)">
       </app-products-form>
-    </div>
-
-    <div class="bg-black bg-opacity-10 border border-secondary rounded-3 p-4">
-      <app-products-list></app-products-list>
     </div>
 
   </main>

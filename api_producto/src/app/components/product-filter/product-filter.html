@@ -1,0 +1,73 @@
+<div class="accordion mb-4" id="filtrosAccordion">
+
+  <div class="accordion-item border-0 bg-transparent">
+
+    <h2 class="accordion-header">
+      <button
+        class="accordion-button bg-secondary-subtle fw-semibold border border-secondary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#filtrosCollapse"
+        aria-expanded="true"
+        aria-controls="filtrosCollapse">
+
+        <span>Filtrar productos</span>
+
+      </button>
+    </h2>
+
+    <div
+      id="filtrosCollapse"
+      class="accordion-collapse collapse"
+      data-bs-parent="#filtrosAccordion">
+
+      <div class="accordion-body p-0 rounded-bottom-3">
+
+        <div class="bg-secondary-subtle bg-opacity-10 border border-secondary rounded-bottom-3 p-3">
+
+          <div class="row g-3 align-items-end">
+
+            <div class="col-12 col-md-4">
+              <label class="form-label small text-muted fw-semibold">
+                Nombre
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar por nombre"
+                (input)="onNombreChange($event)">
+            </div>
+
+            <div class="col-12 col-md-4">
+              <label class="form-label small text-muted fw-semibold">
+                Categoría
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Filtrar por categoría"
+                (input)="onCategoriaChange($event)">
+            </div>
+
+            <div class="col-12 col-md-4">
+              <div class="form-check mt-4">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="soloActivos"
+                  (change)="onActivoChange($event)">
+                <label class="form-check-label fw-medium" for="soloActivos">
+                  Mostrar solo productos activos
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
